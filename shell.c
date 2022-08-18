@@ -334,7 +334,7 @@ void handle_SIGTSTP(int signo){
 
 int main(int argc, char *argv[]){
     char *input = malloc(2048); // shell supports command lines with a maximum length of 2048 characters
-    char *arguments[512];       // a maximum of 512 arguments per line
+    char *arguments[512] = {NULL};       // a maximum of 512 arguments per line
     char *infilep[1] = {NULL};  // input file for I/O redirection
     char *outfilep[1] ={NULL};  // output file for I/O redirection
     pid_t bgProcessesPid[100] ={0}; // array that holds Pids of all current background processes
